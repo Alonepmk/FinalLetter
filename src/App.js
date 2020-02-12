@@ -42,7 +42,7 @@ class Page1 extends React.Component{
     };
   }
   doCheck = ()=> {
-    if(this.state.password === "12345"){
+    if(this.state.password === "16dec2016"){
       this.props.history.push('/page1')
     }
   }
