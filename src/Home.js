@@ -52,7 +52,7 @@ export class Home extends React.Component {
           />
           <Card
             image={Foolish}
-            text='"How am I childish"'
+            text='"How childish am I"'
           />
         </div>
       </div>
