@@ -10,6 +10,7 @@ import Image from './background.jpg';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
+
 function App() {
   return (
     <Router>
@@ -70,8 +71,11 @@ class Page1 extends React.Component{
             <div>
               <h1>Please Login Here</h1>
               <form className={classes.root} noValidate autoComplete="off">
-                  <TextField id="outlined-basic" label="Password" variant="outlined"  onChange={this.getText}/><br/><br/>
+                  <TextField id="outlined-basic" label="Password" variant="outlined"  onChange={this.getText}/><br/>
+                  <label><b><i>Please ask me for the password!</i></b></label>
+                  <br/><br/>
                   <Button variant="contained" color="primary" onClick={this.doCheck}> Login </Button>
+                  
 </form>
               
             </div>
