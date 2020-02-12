@@ -7,6 +7,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Image from './background.jpg';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
 function App() {
   return (
@@ -31,21 +33,6 @@ const useStyles = makeStyles(theme => ({
     color: theme.palette.text.secondary,
   },
 }));
-const styles = {
-  paperContainer: {
-      border: '5px',
-      borderStyle: 'solid',
-      borderColor: 'grey',
-      backgroundImage: `url(${Image})`,
-      backgroundPosition: 'center',
-      backgroundSize: 'cover',
-      backgroundRepeat: 'no-repeat',
-      display: 'flex',
-      justifyContent: 'center',
-      textAlign: 'center',
-      borderRadius: '5px',
-  }
-};
 class Page1 extends React.Component{
   constructor(){
     super();
@@ -65,24 +52,32 @@ class Page1 extends React.Component{
     const classes = useStyles;
     return(
       <div className={classes.root}>
-      <Grid container spacing={3}>
+      <Grid
+  container
+  spacing={3}
+  direction="row"
+  alignItems="center"
+  justify="center"
+  style={{ minHeight: '90vh'}} >
         
-        <Grid item xs={4} style={styles.paperContainer}>
-          <Paper className={classes.paper}>xs=6</Paper>
-        </Grid>
-        <Grid item xs={4}>
+        
+        <Grid item xs={4} style={{
+    border: '5px',
+    borderStyle: 'solid',
+    borderColor: 'grey',
+    borderRadius: '5px'}}>
           <Paper className={classes.paper}>
             <div>
-              <h1>Home Page</h1>
-              <input type="text" onChange={this.getText}></input>
-              <input type="button" onClick={this.doCheck}></input>
+              <h1>Please Login Here</h1>
+              <form className={classes.root} noValidate autoComplete="off">
+                  <TextField id="outlined-basic" label="Password" variant="outlined"  onChange={this.getText}/><br/><br/>
+                  <Button variant="contained" color="primary" onClick={this.doCheck}> Login </Button>
+</form>
+              
             </div>
+            <br></br>
           </Paper>
         </Grid>
-        <Grid item xs={4} style={styles.paperContainer}>
-          <Paper className={classes.paper}>xs=3</Paper>
-        </Grid>
-
         </Grid>
     </div>
     );
